@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>LogsParser</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/es6-shim/0.33.3/es6-shim.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/systemjs/0.19.20/system-polyfills.js"></script>
+    <script src="https://code.angularjs.org/2.0.0-beta.6/angular2-polyfills.js"></script>
+    <script src="https://code.angularjs.org/tools/system.js"></script>
+    <script src="https://code.angularjs.org/tools/typescript.js"></script>
+    <script src="https://code.angularjs.org/2.0.0-beta.6/Rx.js"></script>
+    <script src="https://code.angularjs.org/2.0.0-beta.6/angular2.dev.js"></script>
+    <script src="https://code.angularjs.org/2.0.0-beta.1/angular2.dev.js"></script>
+    <script src="https://code.angularjs.org/2.0.0-beta.17/http.dev.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/FileSaver.js/2014-11-29/FileSaver.min.js"></script>
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
+    <add name="Access-Control-Allow-Origin" value="*" />
+    <add name="Access-Control-Allow-Methods" value="GET, OPTIONS" />
+    <add name="Access-Control-Allow-Headers" value="session-variable" />
+    <!--<script src="system-config.ts"></script>-->
+    <script>
+        System.config({
+            typescriptOptions: { emitDecoratorMetadata: true },
+            packages: {
+                app: {
+                    format: 'register',
+                    defaultExtension: 'js'
+                }
+            }
+        });
+        System.import('app/parser_main')
+            .then(null, console.error.bind(console));
+    </script>
+</head>
+<body>
+<my-app>Loading...</my-app>
+</body>
+</html>
